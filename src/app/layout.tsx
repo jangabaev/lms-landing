@@ -2,18 +2,16 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Navbar } from "@/components/navbar/navbar";
 import "./globals.css";
-
+import { Footer } from "@/components/footer/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "LMSNET",
   icons: {
-    icon: "/logo.svg", // "public" papkasidagi logo faylingiz
+    icon: "/logo.svg",
   },
 };
-
-
 
 export default function RootLayout({
   children,
@@ -23,12 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <link rel="icon" href="" />
+        <link rel="icon" href="" />
       </head>
       <body className={inter.className}>
-        <Navbar/>
+        <Navbar />
         {children}
-        </body>
+        <Footer />
+      </body>
+      
     </html>
   );
 }

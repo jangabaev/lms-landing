@@ -2,20 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/Inter-Regular.eot');
+  src: local('/assets/fonts/Inter Regular'), local('Inter-Regular'),
+      url('/assets/fonts/Inter-Regular.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/Inter-Regular.woff2') format('woff2'),
+      url('/assets/fonts/Inter-Regular.woff') format('woff'),
+      url('/assets/fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
+
+@layer base{
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --text: 0, 0%, 5%;
+    --text-blue:202, 71%, 56%;
+    --background-blue:212, 76%, 52%;
+    --background:0, 0%, 100%;
+    --button-color:0, 0%, 100%;
+  }
+  .dark{
+    --background: 0 0% 3.9%;
+    --text: 0, 0%, 100%;
+    --background-blue:212, 76%, 52% ,0.6;
+    --text-blue:202, 71%, 56%;
+    --button-color:0, 0%, 100%;
   }
 }
 
+
 body{
-  background-color: black;
+  font-family: "inter";
+  background-color: hsl(var(--background)) ;
+  color: hsl(var(--text));
 }
